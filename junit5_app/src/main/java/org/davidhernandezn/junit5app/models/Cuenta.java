@@ -6,6 +6,12 @@ public class Cuenta {
     private String persona;
     private BigDecimal saldo; //BigDecimal O BigInteger - ESPECIAL PARA MANEJO DE DINERO ES INMUTABLE
 
+    //CONSTRUCTOR
+    public Cuenta(String persona, BigDecimal saldo) {
+        this.persona = persona;
+        this.saldo = saldo;
+    }
+
     public String getPersona() {
         return persona;
     }
