@@ -1,0 +1,24 @@
+package org.davidhernandezn.junit5app.models;
+
+import java.math.BigDecimal;
+
+public class Cuenta {
+    private String persona;
+    private BigDecimal saldo; //BigDecimal O BigInteger - ESPECIAL PARA MANEJO DE DINERO ES INMUTABLE
+
+    public String getPersona() {
+        return persona;
+    }
+
+    public void setPersona(String persona) {
+        this.persona = persona;
+    }
+
+    public BigDecimal getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
+    }
+}
