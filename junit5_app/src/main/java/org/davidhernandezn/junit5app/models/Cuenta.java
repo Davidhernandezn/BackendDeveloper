@@ -27,4 +27,26 @@ public class Cuenta {
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        //VALIDAMOS OBJETO
+        /*instanceof permite verificar si un objeto pertenece a una clase determinada* */
+        if (!(obj instanceof Cuenta)){
+            //Verifica si el objeto obj es una instancia de la clase Cuenta.
+            //Si no es una instancia de Cuenta, devuelve false inmediatamente, ya que no se puede comparar con un objeto de otra clase.
+            return false;
+        }
+
+        //Si el objeto obj es una instancia de Cuenta, lo convierte a un objeto Cuenta llamado c.
+        Cuenta c = (Cuenta) obj;
+
+        //VALIDAR ATRIBUTOS SI SON NULOS
+        if (this.persona == null || this.saldo == null){
+            return false;
+        }
+
+        //Compara los atributos persona y saldo del objeto actual (this) con los atributos correspondientes del objeto c.
+        return this.persona.equals(c.getPersona()) && this.saldo.equals(c.getSaldo()); //COMPARA POR OBJETO
+    }
 }
