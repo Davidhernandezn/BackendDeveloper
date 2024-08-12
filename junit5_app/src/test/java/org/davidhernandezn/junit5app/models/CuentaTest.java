@@ -18,6 +18,7 @@ class CuentaTest {
         //cuenta.setPersona("Andres");//PARA VER SI ESTAMOS PASANDO BIEN EL PARAMETRO
         String esperado = "Andres";
         String real = cuenta.getPersona();
+        assertNotNull(real);
 
         //MIENTRAS NO HAYA AFIRMACIONES (ASERTIONS SERA VALIDO)
         //Assertions.assertEquals(esperado, real);
@@ -29,6 +30,7 @@ class CuentaTest {
     @Test
     void testSaldoCuenta(){
         Cuenta cuenta = new Cuenta("Andres", new BigDecimal("1004.12345"));
+        assertNotNull(cuenta.getSaldo());
         assertEquals(1004.12345, cuenta.getSaldo().doubleValue());//Verifica que se an datos iguales
         assertFalse(cuenta.getSaldo().compareTo(BigDecimal.ZERO) < 0);//Verifica que el saldo de la cuenta no sea negativo.
         assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0);//Verifica que el saldo de la cuenta sea positivo.
@@ -53,4 +55,25 @@ class CuentaTest {
 
     }
 
+    @Test
+    void testDebitoCuenta() {
+        //INSTANCIAMOS E INICIALIZAMOS VALORES
+        Cuenta cuenta = new Cuenta("Andres", new BigDecimal("1000.12345"));
+        //INDICAMOS EL VALOR A GASTAR
+        cuenta.debito(new BigDecimal(100));
+        //VALIDA QUE NO SEA NULO
+        assertNotNull(cuenta.getSaldo());
+        assertEquals(900, cuenta.getSaldo().intValue());//valor esperado
+        assertEquals("900.12345",cuenta.getSaldo().toPlainString());//VALOR ESPERADO REAL
+    }
+
+
+    @Test
+    void testCreditoCuenta() {
+        Cuenta cuenta = new Cuenta("Andres", new BigDecimal("1000.12345"));
+        cuenta.credito(new BigDecimal(100));
+        assertNotNull(cuenta.getSaldo());
+        assertEquals(1100, cuenta.getSaldo().intValue());//valor esperado
+        assertEquals("1100.12345",cuenta.getSaldo().toPlainString());
+    }
 }

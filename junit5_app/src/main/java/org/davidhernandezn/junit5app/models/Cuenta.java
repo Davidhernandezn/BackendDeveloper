@@ -28,6 +28,17 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
+    public void debito(BigDecimal monto){
+        //PODEMOS AGREGAR MANEJO DE EXCEPCIONES
+    this.saldo = this.saldo.subtract(monto); //Restar agregamos this.saldo por que es inmutable y no refleja el cambio
+    }
+
+    public void credito(BigDecimal monto){
+        this.saldo = this.saldo.add(monto);//SUMAR, AGREGAR MONTO
+    }
+
+
+
     @Override
     public boolean equals(Object obj) {
         //VALIDAMOS OBJETO
@@ -49,4 +60,6 @@ public class Cuenta {
         //Compara los atributos persona y saldo del objeto actual (this) con los atributos correspondientes del objeto c.
         return this.persona.equals(c.getPersona()) && this.saldo.equals(c.getSaldo()); //COMPARA POR OBJETO
     }
+
+
 }
