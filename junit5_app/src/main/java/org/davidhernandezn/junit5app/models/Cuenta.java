@@ -7,11 +7,20 @@ import java.math.BigDecimal;
 public class Cuenta {
     private String persona;
     private BigDecimal saldo; //BigDecimal O BigInteger - ESPECIAL PARA MANEJO DE DINERO ES INMUTABLE
+    private  Banco banco;
 
     //CONSTRUCTOR
     public Cuenta(String persona, BigDecimal saldo) {
         this.persona = persona;
         this.saldo = saldo;
+    }
+
+    public Banco getBanco() {
+        return banco;
+    }
+
+    public void setBanco(Banco banco) {
+        this.banco = banco;
     }
 
     public String getPersona() {
