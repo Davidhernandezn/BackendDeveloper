@@ -1,5 +1,7 @@
 package org.davidhernandezn.junit5app.models;
 
+import org.davidhernandezn.junit5app.exceptions.DineroInsuficionenteException;
+
 import java.math.BigDecimal;
 
 public class Cuenta {
@@ -29,8 +31,13 @@ public class Cuenta {
     }
 
     public void debito(BigDecimal monto){
-        //PODEMOS AGREGAR MANEJO DE EXCEPCIONES
-    this.saldo = this.saldo.subtract(monto); //Restar agregamos this.saldo por que es inmutable y no refleja el cambio
+       //PODEMOS AGREGAR MANEJO DE EXCEPCIONES
+       BigDecimal nuevoSaldo = this.saldo.subtract(monto);
+       //Restar agregamos this.saldo por que es inmutable y no refleja el cambio
+        if (nuevoSaldo.compareTo(BigDecimal.ZERO) < 0){
+            throw new DineroInsuficionenteException("Dinero Insuficiente");
+        }
+        this.saldo = nuevoSaldo;
     }
 
     public void credito(BigDecimal monto){
