@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class Cuenta {
     private String persona;
     private BigDecimal saldo; //BigDecimal O BigInteger - ESPECIAL PARA MANEJO DE DINERO ES INMUTABLE
-    private  Banco banco;
+    private  Banco banco; /*Cuenta tiene asociado un banco, pero banco tiene muchas cuentas*/
 
     //CONSTRUCTOR
     public Cuenta(String persona, BigDecimal saldo) {

@@ -1,6 +1,7 @@
 package org.davidhernandezn.junit5app.models;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
@@ -9,6 +10,10 @@ public class Banco {
 
     public String getNombre() {
         return nombre;
+    }
+    
+    public Banco() {
+    	this.cuentas = new ArrayList<>();	// Inicializa la lista de cuentas
     }
 
     public void setNombre(String nombre) {
@@ -23,10 +28,11 @@ public class Banco {
         this.cuentas = cuentas;
     }
 
-    public void addCuenta(Cuenta cuentas){
-        cuentas.add(cuentas);
+    public void addCuenta(Cuenta cuenta){
+        cuentas.add(cuenta);
     }
 
+    
     public void transferir(Cuenta origen, Cuenta destino, BigDecimal monto){
         origen.debito(monto);//ENVIA
         destino.credito(monto);//RECIBE DEPOSITO
