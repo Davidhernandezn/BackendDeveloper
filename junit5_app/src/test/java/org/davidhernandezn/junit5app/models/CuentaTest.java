@@ -122,5 +122,19 @@ class CuentaTest {
         assertEquals(2,banco.getCuentas().size());
         //Debemos tener la relacion inversa al hacer test
         assertEquals("Banco del Estado", cuenta1.getBanco().getNombre());   
+        
+        //Stream QUE PERTENESCA A TAL PERSONA
+        //VALOR ESPERADO
+        assertEquals("Andres", banco.getCuentas().stream()
+        		.filter(c -> c.getPersona().equals("Andres"))
+        		.findFirst() //BUSCAR PRIMERO, DEVUELVE OPCIONAL
+        		.get().getPersona());
+        
+ /**  FORMA 1     assertEquaLs(banco.getCuentas().stream()
+        		.filter(c -> c.getPersona().equals("Andres"))
+        		.findFirst().isPresent(); //BUSCAR PRIMERO, DEVUELVE OPCIONAL**/
+    //FORMA 2
+        assertTrue(banco.getCuentas().stream()
+        		.anyMatch(c -> c.getPersona().equals("Andres"))); 
     }
 }

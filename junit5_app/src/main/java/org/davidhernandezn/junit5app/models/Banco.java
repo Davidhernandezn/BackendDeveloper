@@ -30,6 +30,8 @@ public class Banco {
 
     public void addCuenta(Cuenta cuenta){
         cuentas.add(cuenta);
+        //RELACION
+        cuenta.setBanco(this);//POR CADA CUENTA QUE SE AGREGUE LE AGREGAMOS SU BANCO
     }
 
     
