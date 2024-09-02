@@ -2,6 +2,8 @@ package poo;
 
 public class EjemploAutomovil {
 //PANTILLA PARA CREAR OBJETOS, 
+	
+	//STATIC, METODO DE LA CLASE, MAS NO DEL METOOO
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -20,16 +22,13 @@ public class EjemploAutomovil {
 		deportivo.cilindraje = 22.2;
 		
 		
-		System.out.println("auto.fabricante = " + auto.fabricante); // llegar a los atributos
-		System.out.println("auto.modelo = " + auto.modelo);
-		System.out.println("auto.color = " + auto.color);
-		System.out.println("auto.cilindraje = " + auto.cilindraje);
-			
-		System.out.println("deportivo.fabricante = " + deportivo.fabricante); // llegar a los atributos
-		System.out.println("deportivo.modelo = " + deportivo.modelo);
-		System.out.println("deportivo.color = " + deportivo.color);
-		System.out.println("deportivo.cilindraje = " +deportivo.cilindraje);
-
+		//USAMOS METODO DE TALLE DE NUESTRA INSTANCIA AUTOMOVIL
+		auto.detalle();
+		deportivo.detalle();
+		
+		//AL USAR STRING BUILDER
+		System.out.println(auto.detalle());
+		System.out.println(deportivo.detalle());		
 	}
 
 }
