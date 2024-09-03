@@ -33,5 +33,19 @@ public class Automovil {
 		sb.append("auto.cilindraje = " + this.cilindraje);
 		return sb.toString();
 	}
+	
+	public String acelerar(int rpm) {
+		return "el auto " + fabricante +" esta acelerando a "+ rpm +" RPM";
+	}
+	
+	public String frenar() {
+		return "El vehiculo "+ fabricante + modelo + " Frenando ";
+	}
+	
+	public String acelerarFrenar(int rpm) {
+		String acelerar = this.acelerar(rpm);
+		String frenar = frenar();
+		return acelerar + "\n" + frenar;
+	}
 }
 

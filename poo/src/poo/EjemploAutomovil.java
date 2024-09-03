@@ -28,7 +28,13 @@ public class EjemploAutomovil {
 		
 		//AL USAR STRING BUILDER
 		System.out.println(auto.detalle());
-		System.out.println(deportivo.detalle());		
+		System.out.println(deportivo.detalle());
+		 
+		//METODOS SEPARADOS
+		System.out.println(auto.acelerar(300));
+		System.out.println(auto.frenar());
+		
+		System.out.println(auto.acelerarFrenar(333));
 	}
 
 }
