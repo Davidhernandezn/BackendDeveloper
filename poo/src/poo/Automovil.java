@@ -27,11 +27,11 @@ public class Automovil {
 		
 		//AQUI SE USA THIS PORQUE USAMOS LA INSTANCIA DEL MISMO OBJETO
 		//ATRINUTO O METODO DE LA MISMA CLASE USAMOS THIS
-		sb.append("auto.fabricante = " + this.fabricante); // llegar a los atributos
+		sb.append("auto.fabricante = " + this.getFabricante()); // llegar a los atributos
 		//sb.append("auto.modelo = " + this.modelo);//TOMA VALOR DE LA CLASE
-		sb.append("auto.modelo = " + this.modelo);//TOMA VALOR DE ESTE METODO
-		sb.append("auto.color = " + this.color);
-		sb.append("auto.cilindraje = " + this.cilindraje);
+		sb.append("auto.modelo = " + this.getModelo());//TOMA VALOR DE ESTE METODO
+		sb.append("auto.color = " + this.getColor());
+		sb.append("auto.cilindraje = " + this.getCilindraje());
 		return sb.toString();
 	}
 	
