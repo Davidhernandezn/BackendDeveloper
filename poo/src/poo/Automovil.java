@@ -8,7 +8,7 @@ public class Automovil {
 	String modelo;
 	String color;
 	double cilindraje;
-	
+	int capacidadTanque = 40;
 	//METODOS ESTATICOS: MATH, SQRT
 	//FINAL: EVITA QUE EL METODO SE MODIFIQUE EN LA HERENCIA
 	//void se hace algo pero no devuelve nada
@@ -46,6 +46,17 @@ public class Automovil {
 		String acelerar = this.acelerar(rpm);
 		String frenar = frenar();
 		return acelerar + "\n" + frenar;
+	}
+	
+	
+	//CALCULAR
+	public float calcularConsumo(int km, float porcentajeBencina) {
+		return km/(capacidadTanque * porcentajeBencina);
+	}
+	
+	//SOBRECARGA DE METODOS: MISMO METODO CON DIFERENTES PARAMETROS
+	public float calcularConsumo(int km, int porcentajeBencina) {
+		return km/(capacidadTanque * (porcentajeBencina/100f));
 	}
 }
 

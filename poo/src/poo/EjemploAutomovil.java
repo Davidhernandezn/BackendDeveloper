@@ -35,6 +35,13 @@ public class EjemploAutomovil {
 		System.out.println(auto.frenar());
 		
 		System.out.println(auto.acelerarFrenar(333));
+		
+		/**Llama al metodo que solcita un float*/
+		System.out.println("KM por litro: "+ deportivo.calcularConsumo(300, 0.76f));
+		
+		/**Llama al metodo que solcita un Int*/
+		System.out.println("KM por litro: "+ deportivo.calcularConsumo(300, 76));
+
 	}
 
 }
