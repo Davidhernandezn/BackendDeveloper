@@ -4,11 +4,12 @@ package poo;
 //DEBEMOS ENCAPSULARLO, SI NO SE TOMA DEFAULT
 public class Automovil {
 	//ATRIBUTOS
-	String fabricante;
-	String modelo;
-	String color;
-	double cilindraje;
-	int capacidadTanque = 40;
+	private String fabricante;
+	private String modelo;
+	private String color;
+	private double cilindraje;
+	private int capacidadTanque = 40;	
+	
 	//METODOS ESTATICOS: MATH, SQRT
 	//FINAL: EVITA QUE EL METODO SE MODIFIQUE EN LA HERENCIA
 	//void se hace algo pero no devuelve nada
@@ -34,6 +35,49 @@ public class Automovil {
 		return sb.toString();
 	}
 	
+	
+	//AL SER PRIVATE DEBEMOS ACCEDER Y USAR GETTER Y SETTER 
+
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getCilindraje() {
+		return cilindraje;
+	}
+
+	public void setCilindraje(double cilindraje) {
+		this.cilindraje = cilindraje;
+	}
+
+	public int getCapacidadTanque() {
+		return capacidadTanque;
+	}
+
+	public void setCapacidadTanque(int capacidadTanque) {
+		this.capacidadTanque = capacidadTanque;
+	}
+
 	public String acelerar(int rpm) {
 		return "el auto " + fabricante +" esta acelerando a "+ rpm +" RPM";
 	}
