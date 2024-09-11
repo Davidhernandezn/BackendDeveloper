@@ -16,7 +16,7 @@ public class EjemploAutomovil {
 		auto.cilindraje = 12.2;**/
 		
 		Automovil familiar = new Automovil(); //CONSTUCTOR SIN PARAMETROS
-		
+		  
 		/**Para usar constructor necesitas agregar new*/
 		Automovil deportivo = new Automovil("Chevrolet", "Camaro R7"); //CONSTUCTOR CON PARAMETROS
 		//deportivo.setFabricante("Chevrolet");
@@ -46,7 +46,12 @@ public class EjemploAutomovil {
 		
 		/**Llama al metodo que solcita un Int*/
 		System.out.println("KM por litro: "+ deportivo.calcularConsumo(300, 76));
-
+		
+		System.out.println("#################################");
+		Automovil Jeep = new Automovil("Jepp", "Compass", "Blanco", 1.4, 79);
+		System.out.println(Jeep.detalle());
+		Automovil Nissan = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+		System.out.println(Nissan.detalle());
 	}
 
 }

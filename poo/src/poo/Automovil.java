@@ -10,17 +10,40 @@ public class Automovil {
 	private double cilindraje;
 	private int capacidadTanque = 40;	
 	
+	public Automovil() {	
+	}
+		
 	//CONSTRUCTOR: PARA PROCESOS DE INICIALIZACION, conexion a bd, incializar	 conexion, conectarse a serve
 	/**EL TENER CONSTRUCTORES CON DIFERENTES PARAMETROS SON SOBRECARGA DE CONSTRUTOR */
 	public Automovil(String fabricante, String modelo) {
 		this.fabricante = fabricante;
 		this.modelo = modelo;
 	}
+
 	
-	public Automovil() {
-		
+	public Automovil(String fabricante, String modelo, String color) {
+		this(fabricante, modelo);//LLAMA AL CONSTRUCTOR DE 2 PARAMETROS (REFERENCIA A CONSTRUTOR DE LA MISMA CLASE)
+		this.color = color;
 	}
 	
+	
+	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
+		this.fabricante = fabricante;
+		this.modelo = modelo;
+		this.color = color;
+		this.cilindraje = cilindraje;
+	}
+	
+	
+	public Automovil(String fabricante, String modelo, String color, double cilindraje, int capacidadTanque) {
+//		this.fabricante = fabricante;
+//		this.modelo = modelo;
+//		this.color = color;
+//		this.cilindraje = cilindraje;
+		this(fabricante, modelo, color, cilindraje);//(REFERENCIA A CONSTRUTOR DE LA MISMA CLASE)
+		this.capacidadTanque = capacidadTanque;
+	}
+
 	//METODOS ESTATICOS: MATH, SQRT
 	//FINAL: EVITA QUE EL METODO SE MODIFIQUE EN LA HERENCIA
 	//void se hace algo pero no devuelve nada
