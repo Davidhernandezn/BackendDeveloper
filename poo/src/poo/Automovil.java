@@ -20,12 +20,10 @@ public class Automovil {
 		this.modelo = modelo;
 	}
 
-	
 	public Automovil(String fabricante, String modelo, String color) {
 		this(fabricante, modelo);//LLAMA AL CONSTRUCTOR DE 2 PARAMETROS (REFERENCIA A CONSTRUTOR DE LA MISMA CLASE)
 		this.color = color;
 	}
-	
 	
 	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
 		this.fabricante = fabricante;
@@ -33,8 +31,7 @@ public class Automovil {
 		this.color = color;
 		this.cilindraje = cilindraje;
 	}
-	
-	
+		
 	public Automovil(String fabricante, String modelo, String color, double cilindraje, int capacidadTanque) {
 //		this.fabricante = fabricante;
 //		this.modelo = modelo;
@@ -132,9 +129,22 @@ public class Automovil {
 		return km/(capacidadTanque * porcentajeBencina);
 	}
 	
+	//INDICAMOS QUE ESTAMOS SOBREESCRIBIENDO UN METODO
+	@Override //SOLO TIENE OBJETIVO DE DOCUMENTAR NO AFECTA AL CODIGO
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		//CONVERTIR OBJETO A TIPO AUTOMOVIL
+		Automovil a = (Automovil) obj; //CAST VALIDA AUTOMOVIL QUE VIENE FUERA CON EL OBJETO DE ESTA CLASE
+		//USAR EQUAL PARA COMPARAR STRINGS
+		System.out.println();
+		return (this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
+	}
+
 	//SOBRECARGA DE METODOS: MISMO METODO CON DIFERENTES PARAMETROS
 	public float calcularConsumo(int km, int porcentajeBencina) {
 		return km/(capacidadTanque * (porcentajeBencina/100f));
 	}
+	
+	
 }
 

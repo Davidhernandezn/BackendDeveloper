@@ -4,6 +4,9 @@ public class EjemploAutomovil {
 //PANTILLA PARA CREAR OBJETOS, 
 	
 	//STATIC, METODO DE LA CLASE, MAS NO DEL METOOO
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -50,8 +53,23 @@ public class EjemploAutomovil {
 		System.out.println("#################################");
 		Automovil Jeep = new Automovil("Jepp", "Compass", "Blanco", 1.4, 79);
 		System.out.println(Jeep.detalle());
-		Automovil Nissan = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
-		System.out.println(Nissan.detalle());
+
+		Automovil nissan = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+		Automovil nissan2 = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+
+		System.out.println(nissan.detalle());
+		System.out.println("##### MANEJO DE EQUXALS ######");
+		
+		//COMPARA POR REFERENCIA
+		//verificar si dos variables apuntan al mismo objeto en memoria. En otras palabras, 
+		//se comprueba si ambas variables son referencias al mismo lugar en la memoria, 
+		//no sólo si sus contenidos son iguales.
+		System.out.println("USANDO =="+ (nissan == nissan2)); //COMPARA POR REFERENCIA
+		
+		//COMPARA POR VALOR
+		//verificar si los datos contenidos en dos variables son iguales. 
+		//Esto se refiere al contenido o la información que cada variable almacena.
+		System.out.println("USANDO EQUALS"+(nissan.equals(nissan2)));//COMPARA CON EL 
 	}
 
 }
