@@ -164,6 +164,12 @@ public class Automovil {
 	public float calcularConsumo(int km, int porcentajeBencina) {
 		return km/(capacidadTanque * (porcentajeBencina/100f));
 	}
+
+	@Override
+	public String toString() {
+		return "Automovil [fabricante=" + fabricante + ", modelo=" + modelo + ", color=" + color + ", cilindraje="
+				+ cilindraje + ", capacidadTanque=" + capacidadTanque + "]";
+	}
 	
 	
 }

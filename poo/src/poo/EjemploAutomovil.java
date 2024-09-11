@@ -78,6 +78,12 @@ public class EjemploAutomovil {
 		
 		Date fecha = new Date();
 		System.out.println("VALIDA TIPO AUTO CON TIPO FECHA "+auto.equals(fecha));
+		
+		
+		//TO STRING
+		System.out.println(nissan);
+		System.out.println(nissan.toString());
+		
 	}
 
 }
