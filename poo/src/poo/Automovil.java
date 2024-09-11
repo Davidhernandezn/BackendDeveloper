@@ -129,15 +129,35 @@ public class Automovil {
 		return km/(capacidadTanque * porcentajeBencina);
 	}
 	
-	//INDICAMOS QUE ESTAMOS SOBREESCRIBIENDO UN METODO
+//	//INDICAMOS QUE ESTAMOS SOBREESCRIBIENDO UN METODO
+//	@Override //SOLO TIENE OBJETIVO DE DOCUMENTAR NO AFECTA AL CODIGO
+//	public boolean equals(Object obj) {
+//		// TODO Auto-generated method stub
+//		//CONVERTIR OBJETO A TIPO AUTOMOVIL
+//		Automovil a = (Automovil) obj; //CAST VALIDA AUTOMOVIL QUE VIENE FUERA CON EL OBJETO DE ESTA CLASE
+//		//USAR EQUAL PARA COMPARAR STRINGS
+//		return (this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
+//	}
+	
+	//INDICAMOS QUE ESTAMOS SOBREESCRIBIENDO UN METODO (PARA NULO)
+	//CONTIENE VALOR NULO 
 	@Override //SOLO TIENE OBJETIVO DE DOCUMENTAR NO AFECTA AL CODIGO
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		//CONVERTIR OBJETO A TIPO AUTOMOVIL
+		//COMPARAMOS POR REFERENCIA, si son iguales devolver true
+		if(this == obj) {
+			return true;
+		}
+		
+		//PARA COMPARAR SOLO SI EL TIPO DE DATO ES AUTOMOVIL, SI ES DIFERENTE DEVOLVER FALSE
+		if(!(obj instanceof Automovil)) {
+			return false;
+		}
+		
+		
 		Automovil a = (Automovil) obj; //CAST VALIDA AUTOMOVIL QUE VIENE FUERA CON EL OBJETO DE ESTA CLASE
-		//USAR EQUAL PARA COMPARAR STRINGS
-		System.out.println();
-		return (this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
+		return (this.fabricante != null && this.modelo != null 
+				&& this.fabricante.equals(a.getFabricante()) 
+				&& this.modelo.equals(a.getModelo()));
 	}
 
 	//SOBRECARGA DE METODOS: MISMO METODO CON DIFERENTES PARAMETROS

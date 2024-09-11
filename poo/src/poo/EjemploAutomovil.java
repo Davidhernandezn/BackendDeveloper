@@ -1,5 +1,7 @@
 package poo;
 
+import java.util.Date;
+
 public class EjemploAutomovil {
 //PANTILLA PARA CREAR OBJETOS, 
 	
@@ -70,6 +72,12 @@ public class EjemploAutomovil {
 		//verificar si los datos contenidos en dos variables son iguales. 
 		//Esto se refiere al contenido o la información que cada variable almacena.
 		System.out.println("USANDO EQUALS"+(nissan.equals(nissan2)));//COMPARA CON EL 
+		
+		Automovil auto = new Automovil();
+		System.out.println("VALIDA EQUALS NULOS"+auto.equals(nissan));
+		
+		Date fecha = new Date();
+		System.out.println("VALIDA TIPO AUTO CON TIPO FECHA "+auto.equals(fecha));
 	}
 
 }
