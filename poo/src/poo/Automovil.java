@@ -10,6 +10,17 @@ public class Automovil {
 	private double cilindraje;
 	private int capacidadTanque = 40;	
 	
+	//CONSTRUCTOR: PARA PROCESOS DE INICIALIZACION, conexion a bd, incializar	 conexion, conectarse a serve
+	/**EL TENER CONSTRUCTORES CON DIFERENTES PARAMETROS SON SOBRECARGA DE CONSTRUTOR */
+	public Automovil(String fabricante, String modelo) {
+		this.fabricante = fabricante;
+		this.modelo = modelo;
+	}
+	
+	public Automovil() {
+		
+	}
+	
 	//METODOS ESTATICOS: MATH, SQRT
 	//FINAL: EVITA QUE EL METODO SE MODIFIQUE EN LA HERENCIA
 	//void se hace algo pero no devuelve nada

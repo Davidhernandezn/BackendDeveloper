@@ -15,9 +15,12 @@ public class EjemploAutomovil {
 		auto.color="Blanco";
 		auto.cilindraje = 12.2;**/
 		
-		Automovil deportivo = new Automovil();
-		deportivo.setFabricante("Chevrolet");
-		deportivo.setModelo("Camaro R7");
+		Automovil familiar = new Automovil(); //CONSTUCTOR SIN PARAMETROS
+		
+		/**Para usar constructor necesitas agregar new*/
+		Automovil deportivo = new Automovil("Chevrolet", "Camaro R7"); //CONSTUCTOR CON PARAMETROS
+		//deportivo.setFabricante("Chevrolet");
+		//deportivo.setModelo("Camaro R7");
 		deportivo.setColor("Blanco");
 		deportivo.setCilindraje(22.2);
 		
