@@ -10,6 +10,9 @@ public class Automovil {
 	private double cilindraje;
 	private int capacidadTanque = 40;	
 	
+	private static String colorPatente = "Naranja";
+	private static int capacidadTanqueEstatico = 30;
+	
 	public Automovil() {	
 	}
 		
@@ -129,6 +132,11 @@ public class Automovil {
 		return km/(capacidadTanque * porcentajeBencina);
 	}
 	
+	//CALCULAR CONSUMO STATIC
+	public static float calcularConsumoEstatico(int km, float porcentajeBencina) {
+		return km/(capacidadTanqueEstatico * porcentajeBencina);
+	}
+	
 //	//INDICAMOS QUE ESTAMOS SOBREESCRIBIENDO UN METODO
 //	@Override //SOLO TIENE OBJETIVO DE DOCUMENTAR NO AFECTA AL CODIGO
 //	public boolean equals(Object obj) {
@@ -169,6 +177,24 @@ public class Automovil {
 	public String toString() {
 		return "Automovil [fabricante=" + fabricante + ", modelo=" + modelo + ", color=" + color + ", cilindraje="
 				+ cilindraje + ", capacidadTanque=" + capacidadTanque + "]";
+	}
+	
+	
+	/*SI EL ATRIBUTO ES STATICO EL METODO GET Y SET TAMBIEN*/
+	public static String getColorPatente() {
+		return colorPatente;
+	}
+
+	public static void setColorPatente(String colorPatente) {
+		Automovil.colorPatente = colorPatente; //ADIFERENCCIA DE LOS DEMAS SE USA NOMBRE DE LA CLASE
+	}
+
+	public String verDetalle() {
+		/*USAR VARIABLE ESTATICA SOLO AGREGAR NOMBRE DE VARIABLE O NOMBRE DE CLASE Y ATRIBUTO */
+		return "Auto fabricante = " + this.getFabricante()
+		+"\n Auto.color = " + this.color
+		+"\n VER DETALLE## \n AUTO COLOR = " + colorPatente;
+		
 	}
 	
 	
