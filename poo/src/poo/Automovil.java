@@ -4,21 +4,27 @@ package poo;
 //DEBEMOS ENCAPSULARLO, SI NO SE TOMA DEFAULT
 public class Automovil {
 	//ATRIBUTOS
+	private int id;//ID AUTOINCREMENTAL
 	private String fabricante;
 	private String modelo;
 	private String color;
 	private double cilindraje;
-	private int capacidadTanque = 40;	
+	private int capacidadTanque = 40;//PODEMOS ACTUALIZAR LA CAPACIDAD	
 	
 	private static String colorPatente = "Naranja";
 	private static int capacidadTanqueEstatico = 30;
+	private static int ultimoId = 0;//ID QUE PARTE EN 0 POR SER PRIMITIVO
 	
-	public Automovil() {	
-	}
+		public Automovil() {	
+			//CADA QUE SE CREEA UN OBJETO
+			//EN CLASE PRINCIPAL SOLO LO DECLARAS ASI: 		Automovil familiar = new Automovil(); SI TIENE PARAMETROS NO LO LLAMA
+			this.id = ++ultimoId;// Incrementa y asigna el nuevo ID
+		}
 		
 	//CONSTRUCTOR: PARA PROCESOS DE INICIALIZACION, conexion a bd, incializar	 conexion, conectarse a serve
 	/**EL TENER CONSTRUCTORES CON DIFERENTES PARAMETROS SON SOBRECARGA DE CONSTRUTOR */
 	public Automovil(String fabricante, String modelo) {
+		this();//INVOCAMOS CONSTRUCTOR SIN PARAMETROS Y AUMENTARA
 		this.fabricante = fabricante;
 		this.modelo = modelo;
 	}
@@ -28,13 +34,21 @@ public class Automovil {
 		this.color = color;
 	}
 	
+/***Constructor que llama al de arriba*/
 	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
-		this.fabricante = fabricante;
-		this.modelo = modelo;
+		this(fabricante,modelo);
 		this.color = color;
 		this.cilindraje = cilindraje;
 	}
-		
+
+/** CONSTRUCTOR NORMAL*/ 
+//	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
+//		this.fabricante = fabricante;
+//		this.modelo = modelo;
+//		this.color = color;
+//		this.cilindraje = cilindraje;
+//	}
+//		
 	public Automovil(String fabricante, String modelo, String color, double cilindraje, int capacidadTanque) {
 //		this.fabricante = fabricante;
 //		this.modelo = modelo;
@@ -176,7 +190,7 @@ public class Automovil {
 	@Override
 	public String toString() {
 		return "Automovil [fabricante=" + fabricante + ", modelo=" + modelo + ", color=" + color + ", cilindraje="
-				+ cilindraje + ", capacidadTanque=" + capacidadTanque + "]";
+				+ cilindraje + ", capacidadTanque=" + capacidadTanque + "Id " + id;
 	}
 	
 	
@@ -191,10 +205,36 @@ public class Automovil {
 
 	public String verDetalle() {
 		/*USAR VARIABLE ESTATICA SOLO AGREGAR NOMBRE DE VARIABLE O NOMBRE DE CLASE Y ATRIBUTO */
-		return "Auto fabricante = " + this.getFabricante()
+		return "\n auto.id = "+this.id
+				+ " Auto fabricante = " + this.getFabricante()
 		+"\n Auto.color = " + this.color
 		+"\n VER DETALLE## \n AUTO COLOR = " + colorPatente;
 		
+	}
+	
+	/*** PARA ACTUALIZAR ID */
+	public int getId() {
+		return id;
+	}
+
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+
+
+	
+	/*** PARA ACTUALIZAR CAPACIDAD**/
+	public static int getCapacidadTanqueEstatico() {
+		return capacidadTanqueEstatico;
+	}
+
+	public static void setCapacidadTanqueEstatico(int capacidadTanqueEstatico) {
+		Automovil.capacidadTanqueEstatico = capacidadTanqueEstatico;
+	}
+
+	/**calcularConsumoEstatico **/
+	public static float calcularConsumoEstatico(int km, int porcentajeBencina) {
+		return km / (Automovil.capacidadTanqueEstatico * (porcentajeBencina / 100f));
 	}
 	
 	
