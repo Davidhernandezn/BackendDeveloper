@@ -31,7 +31,7 @@ public class EjemploAutomovilStatic {
 		
 		//LLAMA AL CONSTRUCTOR CON OTROS PARAMETROS QUE LLAMAN AL CONSTRUCTOR CON 2 PARAMETROS
 		//CONTADOR 2
-		Automovil nissan = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+		Automovil nissan = new Automovil("Nissan","Navara",Automovil.COLOR_AZUL,1.3); 
 		//Automovil nissan2 = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
 
 		/*ATRIBUTO STATIC CAMBIA PARA TODOS

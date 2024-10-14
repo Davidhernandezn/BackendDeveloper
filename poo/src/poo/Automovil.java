@@ -23,6 +23,11 @@ public class Automovil {
 	public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
 	final public static int VELOCIDAD_MAX_CIUDAD = 60;
 
+	/**CONSTANTES PARA COLORES */
+	public static final String COLOR_AMARILLO = "Amarillo";
+	public static final String COLOR_ROJO = "Rojo";
+	public static final String COLOR_AZUL = "Azul";
+	
 	
 	
 		public Automovil() {	
