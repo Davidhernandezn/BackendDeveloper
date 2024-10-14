@@ -15,6 +15,16 @@ public class Automovil {
 	private static int capacidadTanqueEstatico = 30;
 	private static int ultimoId = 0;//ID QUE PARTE EN 0 POR SER PRIMITIVO
 	
+	/** USO DE FINAL = CONSTANTE, NO PUEDE MODIFICARSE
+	 * - Si se declara como private solo puede usarse dentro de esta clase AUTOMOVIL
+	 * - USAR INTEGER PARA POO
+	 * - int PRIMITIVO PARA TRABAJAR SOLO CON EL VALOR
+	 * - final y static son modificadores de comportamiento*/
+	public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
+	final public static int VELOCIDAD_MAX_CIUDAD = 60;
+
+	
+	
 		public Automovil() {	
 			//CADA QUE SE CREEA UN OBJETO
 			//EN CLASE PRINCIPAL SOLO LO DECLARAS ASI: 		Automovil familiar = new Automovil(); SI TIENE PARAMETROS NO LO LLAMA

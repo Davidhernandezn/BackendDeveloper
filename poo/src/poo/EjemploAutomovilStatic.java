@@ -49,7 +49,11 @@ public class EjemploAutomovilStatic {
 		/*** AL SER ESTATICO DEBE EL METODO DEBE LLAMARSE MEDIANTE SU NOMBRE DE CLASE */
 		//System.out.println("KM por Litros: "+ nissan.calcularConsumoEstatico(300, 60));
 		//System.out.println("KM por Litros: "+ Automovil.calcularConsumoEstatico(300, 60));
+		
+		System.out.println("VELICIDAD EN CARRETERA " + Automovil.VELOCIDAD_MAX_CARRETERA);
+		System.out.println("VELICIDAD EN CIUDAD "+ Automovil.VELOCIDAD_MAX_CIUDAD);
 
+		
 	}
 
 }
