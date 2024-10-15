@@ -26,13 +26,18 @@ public class EjemploAutomovilStatic {
 		/**Para usar constructor necesitas agregar new*/
 		//CONSTRUCTOR CON 2 PARAMETROS CON CONTADOR 1
 		Automovil deportivo = new Automovil("Chevrolet", "Camaro R7"); //CONSTUCTOR CON PARAMETROS
-		deportivo.setColor("Blanco");
+		//deportivo.setColor("Blanco");
+		/**AGREGAR COLOR CON ENUM
+		 * COMO ESTA DEFINIDO ESPERA UN STRING Y ESTAMOS PASANFO UN TIPO COLOR, MODIFICA LA CLASE AUTOMOVIL*/
+		deportivo.setColor(Color.BLANCO);
+		
 		deportivo.setCilindraje(22.2);
 		
 		//LLAMA AL CONSTRUCTOR CON OTROS PARAMETROS QUE LLAMAN AL CONSTRUCTOR CON 2 PARAMETROS
 		//CONTADOR 2
-		Automovil nissan = new Automovil("Nissan","Navara",Automovil.COLOR_AZUL,1.3); 
-		//Automovil nissan2 = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+		//AGREGA COLOR DE LA CLASE
+		//Automovil nissan = new Automovil("Nissan","Navara",Automovil.COLOR_AZUL,1.3); 
+		//Automovil nissan2 = new Automovil("Nissan","Navara",Color.get,1.3); 
 
 		/*ATRIBUTO STATIC CAMBIA PARA TODOS
 		 * nissan.colorPatente = "Negro";
@@ -43,7 +48,7 @@ public class EjemploAutomovilStatic {
 		//Automovil.getColorPatente();
 		
 		System.out.println(deportivo.verDetalle());
-		System.out.println(nissan.verDetalle());
+		//System.out.println(nissan.verDetalle());
 		
 		Automovil.setCapacidadTanqueEstatico(45); //ACTUALIZA CAPACIDAD
 		/*** AL SER ESTATICO DEBE EL METODO DEBE LLAMARSE MEDIANTE SU NOMBRE DE CLASE */

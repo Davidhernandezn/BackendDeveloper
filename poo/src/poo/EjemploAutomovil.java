@@ -10,8 +10,6 @@ public class EjemploAutomovil {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		// NEW CREA INSTANCIA, INICIALIZA EL OBJETO Y LO GUARDA EN LA MEMORIA
 		// TIPO DATO Automovil
 		/**Automovil auto = new Automovil();
@@ -26,7 +24,7 @@ public class EjemploAutomovil {
 		Automovil deportivo = new Automovil("Chevrolet", "Camaro R7"); //CONSTUCTOR CON PARAMETROS
 		//deportivo.setFabricante("Chevrolet");
 		//deportivo.setModelo("Camaro R7");
-		deportivo.setColor("Blanco");
+		deportivo.setColor(Color.BLANCO);
 		deportivo.setCilindraje(22.2);
 		
 		
@@ -53,11 +51,11 @@ public class EjemploAutomovil {
 		System.out.println("KM por litro: "+ deportivo.calcularConsumo(300, 76));
 		
 		System.out.println("#################################");
-		Automovil Jeep = new Automovil("Jepp", "Compass", "Blanco", 1.4, 79);
+		Automovil Jeep = new Automovil("Jepp", "Compass", Color.BLANCO, 1.4, 79);
 		System.out.println(Jeep.detalle());
 
-		Automovil nissan = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
-		Automovil nissan2 = new Automovil("Nissan","Navara","Gris Oscuro",1.3); 
+		Automovil nissan = new Automovil("Nissan","Navara",Color.GRIS,1.3); 
+		Automovil nissan2 = new Automovil("Nissan","Navara",Color.AZUL,1.3); 
 
 		System.out.println(nissan.detalle());
 		System.out.println("##### MANEJO DE EQUXALS ######");

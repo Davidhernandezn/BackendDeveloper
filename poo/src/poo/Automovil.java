@@ -7,11 +7,18 @@ public class Automovil {
 	private int id;//ID AUTOINCREMENTAL
 	private String fabricante;
 	private String modelo;
-	private String color;
+	/***AGREGAR COLO TIPO STRING*/
+	//private String color;
+	/***AGREGAR COLOR TIPO COLOR*/
+	private Color color = Color.ROJO;
+	
 	private double cilindraje;
 	private int capacidadTanque = 40;//PODEMOS ACTUALIZAR LA CAPACIDAD	
 	
-	private static String colorPatente = "Naranja";
+	//private static String colorPatente = "Naranja";
+	//PARAMETRIZAMOS
+	private static Color colorPatente = Color.NARANJO;
+	
 	private static int capacidadTanqueEstatico = 30;
 	private static int ultimoId = 0;//ID QUE PARTE EN 0 POR SER PRIMITIVO
 	
@@ -44,13 +51,25 @@ public class Automovil {
 		this.modelo = modelo;
 	}
 
-	public Automovil(String fabricante, String modelo, String color) {
+//	public Automovil(String fabricante, String modelo, String color) {
+//		this(fabricante, modelo);//LLAMA AL CONSTRUCTOR DE 2 PARAMETROS (REFERENCIA A CONSTRUTOR DE LA MISMA CLASE)
+//		this.color = color;
+//	}
+	
+	public Automovil(String fabricante, String modelo, Color color) {
 		this(fabricante, modelo);//LLAMA AL CONSTRUCTOR DE 2 PARAMETROS (REFERENCIA A CONSTRUTOR DE LA MISMA CLASE)
 		this.color = color;
 	}
 	
-/***Constructor que llama al de arriba*/
-	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
+///***Constructor que llama al de arriba*/
+//	public Automovil(String fabricante, String modelo, String color, double cilindraje) {
+//		this(fabricante,modelo);
+//		this.color = color;
+//		this.cilindraje = cilindraje;
+//	}
+	
+	/***Constructor que llama al de arriba*/
+	public Automovil(String fabricante, String modelo, Color color, double cilindraje) {
 		this(fabricante,modelo);
 		this.color = color;
 		this.cilindraje = cilindraje;
@@ -64,7 +83,7 @@ public class Automovil {
 //		this.cilindraje = cilindraje;
 //	}
 //		
-	public Automovil(String fabricante, String modelo, String color, double cilindraje, int capacidadTanque) {
+	public Automovil(String fabricante, String modelo, Color color, double cilindraje, int capacidadTanque) {
 //		this.fabricante = fabricante;
 //		this.modelo = modelo;
 //		this.color = color;
@@ -117,11 +136,19 @@ public class Automovil {
 		this.modelo = modelo;
 	}
 
-	public String getColor() {
+//	public String getColor() {
+//		return color;
+//	}
+
+	public Color getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
+
+//	public void setColor(String color) {
+//		this.color = color;
+//	}
+	public void setColor(Color color) {
 		this.color = color;
 	}
 
@@ -210,11 +237,11 @@ public class Automovil {
 	
 	
 	/*SI EL ATRIBUTO ES STATICO EL METODO GET Y SET TAMBIEN*/
-	public static String getColorPatente() {
+	public static Color getColorPatente() {
 		return colorPatente;
 	}
 
-	public static void setColorPatente(String colorPatente) {
+	public static void setColorPatente(Color colorPatente) {
 		Automovil.colorPatente = colorPatente; //ADIFERENCCIA DE LOS DEMAS SE USA NOMBRE DE LA CLASE
 	}
 
@@ -222,8 +249,8 @@ public class Automovil {
 		/*USAR VARIABLE ESTATICA SOLO AGREGAR NOMBRE DE VARIABLE O NOMBRE DE CLASE Y ATRIBUTO */
 		return "\n auto.id = "+this.id
 				+ " Auto fabricante = " + this.getFabricante()
-		+"\n Auto.color = " + this.color
-		+"\n VER DETALLE## \n AUTO COLOR = " + colorPatente;
+		+"\n Auto.color = " + this.color.getColor()
+		+"\n VER DETALLE## \n AUTO COLOR = " + Automovil.getColorPatente().getColor();
 		
 	}
 	
