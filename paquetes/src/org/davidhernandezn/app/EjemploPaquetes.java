@@ -16,6 +16,8 @@ public class EjemploPaquetes {
 		
 		System.out.println(p.nombre);
 		System.out.println(p2.nombre);
+		
+		Perro perro = new Perro(); 
 
 	}
 
